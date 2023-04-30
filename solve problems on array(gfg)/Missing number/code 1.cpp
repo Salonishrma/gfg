@@ -1,6 +1,11 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2638
-\cocoatextscaling0\cocoaplatform0{\fonttbl}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+//using sum of natural no
+int missingNumber(int A[], int N)
+{
+    // Your code goes here
+    int sum_natural_no=(N*(N+1))/2;
+    int sum=0;
+    for(int i=0;i<N-1;i++){
+        sum=sum+A[i];
+    }
+    return ( sum_natural_no - sum);
 }
