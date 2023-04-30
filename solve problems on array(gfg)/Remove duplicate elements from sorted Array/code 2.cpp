@@ -1,6 +1,48 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2638
-\cocoatextscaling0\cocoaplatform0{\fonttbl}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+//{ Driver Code Starts
+//Initial template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+// } Driver Code Ends
+//User function template for C++
+
+class Solution{
+public:
+    int remove_duplicate(int a[],int n){
+        // code here
+    int ans=1;
+    for(int i=1;i<n;i++){
+        if(a[i-1]!=a[i]){
+            a[ans]=a[i];
+            ans++;
+        }
+    }
+    return ans;
+    }
+};
+
+//{ Driver Code Starts.
+int main()
+{
+    int T;
+    cin>>T;
+    while(T--)
+    {
+        int N;
+        cin>>N;
+        int a[N];
+        for(int i=0;i<N;i++)
+        {
+            cin>>a[i];
+        }
+    Solution ob;
+    int n = ob.remove_duplicate(a,N);
+
+    for(int i=0;i<n;i++)
+        cout<<a[i]<<" ";
+    cout<<endl;
+    }
 }
+// } Driver Code Ends
