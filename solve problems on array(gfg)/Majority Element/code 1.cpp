@@ -1,6 +1,53 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2638
-\cocoatextscaling0\cocoaplatform0{\fonttbl}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+//{ Driver Code Starts
+//Initial template for C++
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+// } Driver Code Ends
+//User function template for C++
+
+class Solution{
+  public:
+     // Function to find majority element in the array
+    // a: input array
+    // size: size of input array
+    int majorityElement(int a[], int size)
+    {
+       map<int,int>m1;
+       for(int i=0;i<size;i++){
+           m1[a[i]]++;
+       }
+       for(auto it:m1){
+           if(it.second>(size/2)){
+               return it.first;
+           }
+       }
+       return -1;
+    }
+};
+
+//{ Driver Code Starts.
+
+int main(){
+
+    int t;
+    cin >> t;
+
+    while(t--){
+        int n;
+        cin >> n;
+        int arr[n];
+        
+        for(int i = 0;i<n;i++){
+            cin >> arr[i];
+        }
+        Solution obj;
+        cout << obj.majorityElement(arr, n) << endl;
+    }
+
+    return 0;
 }
+
+// } Driver Code Ends
