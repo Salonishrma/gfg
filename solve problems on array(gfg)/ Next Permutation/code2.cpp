@@ -1,6 +1,8 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2638
-\cocoatextscaling0\cocoaplatform0{\fonttbl}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-}
+
+class Solution{
+public:
+    vector<int> nextPermutation(int N, vector<int> arr){
+       next_permutation(arr.begin(),arr.end());
+       return arr;
+    }
+};
