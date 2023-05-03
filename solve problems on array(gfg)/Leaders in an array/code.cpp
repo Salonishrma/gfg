@@ -1,6 +1,64 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2638
-\cocoatextscaling0\cocoaplatform0{\fonttbl}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+//{ Driver Code Starts
+// C++ program to remove recurring digits from
+// a given number
+#include <bits/stdc++.h>
+using namespace std;
+
+
+// } Driver Code Ends
+
+class Solution{
+    //Function to find the leaders in the array.
+    public:
+    vector<int> leaders(int a[], int n){
+        // Code here
+       int min=-1;
+       vector<int>v1;
+    for(int i = n - 1; i >= 0; i--) {
+        if(a[i]>=min) {
+            v1.push_back(a[i]);
+            min=a[i];
+        }
+        min=max(min,a[i]);
+    }
+  reverse(v1.begin(),v1.end());
+  return v1;
 }
+
+
+};
+
+
+
+//{ Driver Code Starts.
+
+int main()
+{
+   long long t;
+   cin >> t;//testcases
+   while (t--)
+   {
+       long long n;
+       cin >> n;//total size of array
+        
+        int a[n];
+        
+        //inserting elements in the array
+        for(long long i =0;i<n;i++){
+            cin >> a[i];
+        }
+        Solution obj;
+        //calling leaders() function
+        vector<int> v = obj.leaders(a, n);
+        
+        //printing elements of the vector
+        for(auto it = v.begin();it!=v.end();it++){
+            cout << *it << " ";
+        }
+        
+        cout << endl;
+
+   }
+}
+
+// } Driver Code Ends
