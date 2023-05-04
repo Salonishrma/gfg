@@ -1,6 +1,53 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2638
-\cocoatextscaling0\cocoaplatform0{\fonttbl}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+//{ Driver Code Starts
+#include <bits/stdc++.h> 
+using namespace std; 
+
+// } Driver Code Ends
+
+class Solution
+{   
+    public:
+    //Function to rotate matrix anticlockwise by 90 degrees.
+    void rotateby90(vector<vector<int> >& matrix, int n) 
+    { 
+        // code here 
+        for(int i=0;i<n;i++){
+            for(int j=i;j<n;j++){
+                swap(matrix[i][j],matrix[j][i]);
+            }
+        }
+        reverse(matrix.begin(),matrix.end());
+    } 
+};
+
+
+//{ Driver Code Starts.
+int main() {
+    int t;
+    cin>>t;
+    
+    while(t--) 
+    {
+        int n;
+        cin>>n;
+        vector<vector<int> > matrix(n); 
+
+        for(int i=0; i<n; i++)
+        {
+            matrix[i].assign(n, 0);
+            for( int j=0; j<n; j++)
+            {
+                cin>>matrix[i][j];
+            }
+        }
+
+        Solution ob;
+        ob.rotateby90(matrix, n);
+        for (int i = 0; i < n; ++i)
+            for (int j = 0; j < n; ++j)
+                cout<<matrix[i][j]<<" ";
+        cout<<endl;
+    }
+    return 0;
 }
+// } Driver Code Ends
